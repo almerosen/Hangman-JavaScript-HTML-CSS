@@ -1,7 +1,7 @@
 let words = ["football", "golf", "hockey", "cycling", "badminton"];
 
 let word = "";
-let remainingLetters = "";
+let remainingCorrectLetters = "";
 let wrongGuess = 0;
 let rightGuessedLetters = [];
 let wrongGuessedLetters = [];
@@ -31,7 +31,7 @@ const showBodyPart = () => {
 const startGame = () => {
     word = words[Math.floor(Math.random() * words.length)]
     console.log("Word to guess:", word)
-    remainingLetters = word.length; 
+    remainingCorrectLetters = word.length; 
 
     word.split(" ")
     for (let i = 0; i < word.length; i++) {
@@ -66,8 +66,8 @@ const guessLetter = () => {
             if (letter === guess) {
                 rightGuessedLetters.push(guess)
                 document.querySelectorAll(".wordDisplay-letters")[index].innerHTML = `<p>${guess.toUpperCase()}</p>` 
-                remainingLetters--
-                remainingLetters > 0 ? console.log("Correct guess. Remaining letters:", remainingLetters) : console.log("You won!")
+                remainingCorrectLetters--
+                remainingCorrectLetters > 0 ? console.log("Correct guess. Remaining letters:", remainingCorrectLetters) : console.log("You won!")
 
             }
         })
@@ -80,7 +80,7 @@ const guessLetter = () => {
         showBodyPart()
     }
 
-    if (remainingLetters === 0) {
+    if (remainingCorrectLetters === 0) {
         document.querySelector("#win-container").classList = "";
         document.querySelector(".won-lost-word__txt").innerHTML = `The correct word was: ${word}`;
     }
@@ -98,7 +98,7 @@ const guessLetter = () => {
 
 const resetGame = () => {
     word = "";
-    remainingLetters = 0;
+    remainingCorrectLetters = 0;
     wrongGuess = 0;
     wrongGuessedLetters = [];
     rightGuessedLetters = [];

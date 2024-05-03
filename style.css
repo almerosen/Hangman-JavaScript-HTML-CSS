@@ -74,9 +74,6 @@ p {
     box-shadow: 2px 2px 2px black;;
 }
 
-
-
-
 .hidden {
     visibility: hidden;
 }
@@ -117,7 +114,6 @@ p {
 
 }
 
-
 #guessTheWord {
     font-size: 2rem;
     text-align: center;
@@ -132,7 +128,6 @@ p {
     margin-bottom: .8rem;
 
 }
-
 
 #guessLetterInput {
     height: 2.5rem;
